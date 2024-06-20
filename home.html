@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HuutisNet</title>
+    <link rel="stylesheet" href="../styles/styleFeed.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    
+    
+</head>
+
+<body>
+
+    <header>
+        <nav class="top-nav" id="top-nav">
+            <ul>
+                <li><a href="home.html">Etusivu</a></li>
+                <li><a href="profile.html">Profiili</a></li>
+                <li><a href="index.html">Kirjaudu ulos</a></li>
+            </ul>
+
+        </nav>
+
+
+
+
+    </header>
+
+
+    <main class="feed">
+
+        <div id="hello-user">
+            <h3>Hei&nbsp;</h3> <h3 id="user-username"> Käyttäjänimi </h3><h3>! </h3>
+            <button id="create-post-button">Luo tapahtuma</button>
+        </div>
+        
+        
+
+        <!-- The Modal -->
+        <div id="create-post-modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form id="create-post-form">
+                    <h2>Luo uusi tapahtuma</h2>
+                    <!-- Paikka -->
+                    <input type="text" id="post-location" placeholder="Paikka" required>
+                    <br>
+                    <!-- Milloin -->
+                    <label for="post-date">Tapahtuma-aika:</label>
+                    <input type="datetime-local" id="post-date" required>
+                    <br>
+                    <!-- loppu -->
+                    <label for="post-end-date">Tapahtuman loppuminen:</label>
+                    <input type="datetime-local" id="post-end-date" required>
+                    <textarea id="post-content-textarea" class="post-content-characters" placeholder="Tapahtuman kuvaus" required></textarea>
+                    <!-- Merkkilaskuri, max 200 merkkiö -->
+                    <p id="char-counter">0/200</p>
+                    
+                    <button type="submit" id="send-post-button">Luo tapahtuma</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="postsContainer"></div> <!-- Tämä renderöi postaukset someFeed.js:ssä -->
+    </main>
+
+        <div id="image-modal" class="image-pic-modal" style="display: none;">
+        <div class="content-image-pic-modal" id="image-pic-modali" >
+        <span class="close" id="close-modal" >&times;</span>
+        <div id="modal-image"></div>
+        </div>
+      </div> 
+
+    <script src="/js/someFeed.js"></script>
+    <script src="/js/createPost.js"></script>
+
+
+</body>
+</html>

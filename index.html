@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HuutisNet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../styles/styleProto.css">
+</head>
+
+<body>
+    <div>
+        <!-- Testikäyttöön nappi etusivulle -->
+        <a href="home.html">Etusivulle</a>
+
+    </div>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form id="registerForm">
+                <h1>Luo käyttäjä</h1>
+                <input id="newUsername" type="text" placeholder="Nimi" required>
+                <input id="newEmail" type="email" placeholder="Sähköposti" required>
+                <input id="newPassword" type="password" placeholder="Salasana" required>
+                <input id="newPasswordConfirm" type="password" placeholder="Varmista salasana" required>
+                <button type="submit">Kirjaudu</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form id="loginForm">
+                <h1>HuutisNet</h1>
+                <div class="logo-container">
+                    <img src="pictures/Ykähuuttis.png" alt="Sivun logo" width="250" height="150">
+                </div>
+                <h1>Kirjaudu</h1>
+                <input id="loginUsername" type="text" placeholder="Käyttäjänimi" required>
+                <input id="loginPassword" type="password" placeholder="salasana" required>
+                <a href="/forgot-password">Unohtuiko salasana?</a>
+                <button type="submit">Kirjaudu</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Tervetuloa takaisin!</h1>
+                    <p>Kirjaudu sisään nähdäksesi kaikki sivun ominaisuudet</p>
+                    <button class="hidden" id="login">Kirjaudu</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Terve, kaveri!</h1>
+                    <p>Rekisteröidy henkilökohtaisilla tiedoillasi, jotta pääset käsiksi sivun kaikkiin omisuuksiin</p>
+                    <button class="hidden" id="register">Rekisteröidy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/protoApp.js"></script>
+</body>
+
+</html>
