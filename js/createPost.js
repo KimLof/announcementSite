@@ -56,26 +56,30 @@ document.getElementById('create-post-form').addEventListener('submit', function 
  
     let postContent = htmlEncode(document.getElementById('post-content-textarea').value);
     const token = localStorage.getItem('jwtToken');
-    let image = document.getElementById('post-image');
-   
-    let picture = htmlEncode(document.getElementById('post-image-url-textarea').value);
+
+    let postLocation = htmlEncode(document.getElementById('post-location').value);
+    let postStartDate = htmlEncode(document.getElementById('post-date').value);
+    let postEndDate = htmlEncode(document.getElementById('post-end-date').value);
+    // let postStartDate = html.getElementById('post-date').value;
+    // let postEndDate = html.getElementById('post-end-date').value;
+
     const formData = new FormData();
 
-    if (image.files.length > 0) {
-        // If an image file is selected, append it to the FormData object
-        formData.append('image', image.files[0]);
-    } else if (picture.trim() !== "") {
-        // If an image URL is provided, add it to the FormData object
-        formData.append('url', picture);
-    }
+
+    console.log('postStartDate:', postStartDate, 'postEndDate:', postEndDate)
+
+
     
     // Add other form fields to the FormData object
-    formData.append('content', postContent);
+    formData.append('kuvaus', postContent);
+    formData.append('location', postLocation);
+    formData.append('startDate', postStartDate);
+    formData.append('endDate', postEndDate);
     
     
     
 
-    console.log( 'Content:', postContent, 'Picture:', formData)
+    console.log( 'kuvaus:', postContent, 'Picture:', formData)
     if (!token) {
         alert('You must be logged in to create a post!');
         return;

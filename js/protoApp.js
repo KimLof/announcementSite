@@ -40,7 +40,8 @@ loginForm.addEventListener('submit', function(e) {
             if(data.token) {
                 localStorage.setItem('jwtToken', data.token);
                 alert('Login successful! Redirecting...');
-                window.location.href = '/someFeed.html';
+                //redirect to /home
+                window.location.href = '/home';
             } else {
                 throw new Error('No token acquired!');
             }
@@ -112,7 +113,8 @@ registerForm.addEventListener('submit', function(e) {
         .then(data => {
             console.log(data);
             alert('Registration successful! You can now log in.');
-            window.location.href = 'login.html'; // Redirect to login page
+            //redirect to login page
+            container.classList.remove("active");
         })
         .catch(error => {
             console.error('Error:', error);
